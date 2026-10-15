@@ -7,7 +7,7 @@ as the lead magnet in ads. Plain HTML, CSS and JS; no build step.
 site/
 ├── index.html             # sales page: dashboards + monthly follow-up, 2 niches, 2 packages
 ├── calculadora/index.html # margin calculator (lead magnet)
-├── agendado/index.html    # Cal.com redirect after booking (sends the Schedule event)
+├── agendado/index.html    # Cal.com redirect page (unused: the redirect needs a paid Cal.com plan)
 ├── privacidade/index.html # privacy policy (LGPD), linked from every footer and the Tally form
 ├── 404.html               # served by GitHub Pages for missing URLs (absolute paths)
 ├── assets/
@@ -51,11 +51,12 @@ dashboard pipeline compute margins the same way.
 - `tallyFormId`: id of the Tally lead form. While empty, "Liberar análise completa" unlocks
   without a form (useful for testing). The form receives hidden fields `origem`, `canal`, `preco`;
   create them in Tally with those exact names.
-- `calUrl`: booking link for the free 30-minute diagnosis. In Cal.com, set the event's redirect
-  after booking to `https://dadosavista.com.br/agendado/`.
+- `calUrl`: booking link for the free 30-minute initial meeting (`cal.com/dados-a-vista/reuniao-inicial`).
+  Redirecting to `/agendado/` after booking needs a paid Cal.com plan, so the page is unused for now.
 - `metaPixelId`: Meta pixel id. While empty there is no pixel and no cookie banner (nothing to
   consent to). Once set, the banner appears; the pixel loads only after "Aceitar" and sends
-  PageView, Lead (Tally form sent) and Schedule (`/agendado`).
+  PageView, Lead (Tally form sent) and Schedule (`/agendado`, which only fires if that redirect is ever enabled; the free alternative is embedding
+  the Cal.com calendar and listening to its booking event).
 - `companyName`, `cnpj`, `email`, `linkedinUrl`: shown on the sales page and footer; each element
   stays hidden while its value is empty.
 

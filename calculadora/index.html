@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de margem real | Dados à Vista</title>
+  <meta name="description" content="Descubra quanto sobra, de verdade, de cada venda no Mercado Livre, na Shopee ou na sua loja: comissão, taxa fixa, frete, imposto e anúncio, em segundos.">
+  <meta property="og:title" content="Quanto sobra, de verdade, de cada venda?">
+  <meta property="og:description" content="Calculadora gratuita de margem para lojistas online.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../">Dados <span>à Vista</span></a>
+    <a class="btn btn-ghost js-cal" href="#">Diagnóstico grátis</a>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Calculadora gratuita</p>
+      <h1>Quanto sobra, de verdade, de cada venda?</h1>
+      <p class="lead">Informe o preço, o custo e o canal. Em segundos você vê para onde vai cada real:
+        comissão, taxa fixa, frete, imposto e anúncio.</p>
+    </section>
+
+    <div class="calc-grid">
+      <form id="calc-form" class="card" novalidate>
+        <fieldset>
+          <legend>Onde você vende</legend>
+          <div class="field full">
+            <label for="channel">Canal</label>
+            <div class="input">
+              <select id="channel" name="channel"></select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Seu produto (por unidade)</legend>
+          <div class="fields">
+            <div class="field">
+              <label for="price">Preço de venda</label>
+              <div class="input"><span class="affix">R$</span><input id="price" inputmode="decimal" autocomplete="off" value="39,90"></div>
+            </div>
+            <div class="field">
+              <label for="cost">Custo do produto</label>
+              <div class="input"><span class="affix">R$</span><input id="cost" inputmode="decimal" autocomplete="off" value="20,00"></div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Custos da venda</legend>
+          <div class="fields">
+            <div class="field">
+              <label for="shipping">Frete que você paga</label>
+              <div class="input"><span class="affix">R$</span><input id="shipping" inputmode="decimal" autocomplete="off" value="11,00"></div>
+            </div>
+            <div class="field">
+              <label for="ads">Anúncio por venda</label>
+              <div class="input"><span class="affix">R$</span><input id="ads" inputmode="decimal" autocomplete="off" value="0,00"></div>
+            </div>
+            <div class="field">
+              <label for="tax">Imposto sobre a venda</label>
+              <div class="input"><input id="tax" inputmode="decimal" autocomplete="off" value="6"><span class="affix">%</span></div>
+            </div>
+          </div>
+          <p class="hint">Anúncio por venda = quanto você gastou em anúncios no mês ÷ unidades vendidas.</p>
+        </fieldset>
+
+        <details>
+          <summary>Taxas do canal (ajuste com as da sua conta)</summary>
+          <div class="fields">
+            <div class="field">
+              <label for="commission">Comissão</label>
+              <div class="input"><input id="commission" inputmode="decimal" autocomplete="off"><span class="affix">%</span></div>
+            </div>
+            <div class="field">
+              <label for="payment">Taxa de pagamento</label>
+              <div class="input"><input id="payment" inputmode="decimal" autocomplete="off"><span class="affix">%</span></div>
+            </div>
+            <div class="field">
+              <label for="fixedFee">Taxa fixa por unidade</label>
+              <div class="input"><span class="affix">R$</span><input id="fixedFee" inputmode="decimal" autocomplete="off"></div>
+            </div>
+            <div class="field">
+              <label for="fixedFeeBelow">Cobrada abaixo de</label>
+              <div class="input"><span class="affix">R$</span><input id="fixedFeeBelow" inputmode="decimal" autocomplete="off"></div>
+            </div>
+          </div>
+          <p class="hint">Os valores pré-preenchidos são aproximados e variam por categoria e tipo de anúncio.</p>
+        </details>
+      </form>
+
+      <section class="card result" aria-live="polite">
+        <p class="result-label">Sobra por venda</p>
+        <p class="result-value" id="profit">R$ 0,00</p>
+        <p class="result-margin" id="margin">margem de 0%</p>
+        <div class="bar" id="bar" role="img" aria-label="Para onde vai o preço de venda"></div>
+        <ul class="legend" id="legend"></ul>
+        <p class="verdict" id="verdict"></p>
+      </section>
+    </div>
+
+    <section class="card pro" id="pro">
+      <div class="pro-head">
+        <h2>Preço mínimo e comparação entre canais</h2>
+        <div class="field">
+          <label for="target">Margem desejada</label>
+          <div class="input"><input id="target" inputmode="decimal" autocomplete="off" value="15"><span class="affix">%</span></div>
+        </div>
+      </div>
+      <div id="pro-content" class="blurred" aria-hidden="true">
+        <p class="min-price" id="min-price"></p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>Canal</th><th class="num">Sobra por venda</th><th class="num">Margem</th></tr>
+            </thead>
+            <tbody id="compare"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="gate" id="gate">
+        <p><strong>Libere grátis</strong> o preço mínimo para a margem que você quer e a comparação do
+          mesmo produto em cada canal.</p>
+        <button class="btn" type="button" id="unlock">Liberar análise completa</button>
+      </div>
+    </section>
+
+    <section class="card cta">
+      <div>
+        <h2>Agora imagine isso para todos os seus produtos, atualizado sozinho todo dia.</h2>
+        <p>Montamos um painel com a margem real de cada produto e canal, puxando os dados direto do
+          Mercado Livre, da Shopee e da sua loja. Sem planilha.</p>
+      </div>
+      <a class="btn btn-light js-cal" href="#">Agendar diagnóstico grátis (30 min)</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>Dados à Vista</strong> · Dados para e-commerce e pequenas empresas · Atendimento 100% online</p>
+    <p>Os resultados são estimativas e não substituem a orientação do seu contador.</p>
+  </footer>
+
+  <script src="../assets/config.js"></script>
+  <script src="../assets/calc.js"></script>
+  <script src="../assets/calculadora.js"></script>
+</body>
+</html>

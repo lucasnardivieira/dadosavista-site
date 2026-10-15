@@ -7,6 +7,6 @@ window.DAV_CONFIG = {
   // Company details shown on the sales page and footer. Empty = the element stays hidden.
   companyName: "",
   cnpj: "",
-  email: "",
+  email: "contato@dadosavista.com.br",
   linkedinUrl: "",
 };

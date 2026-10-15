@@ -454,6 +454,7 @@ h3 { margin: 0 0 8px; font-size: 1.08rem; letter-spacing: -0.015em; }
 /* Guarantee */
 .guarantee { display: grid; gap: 20px; background: var(--brand-tint); border-color: #c5dfe2; padding: 28px; box-shadow: none; }
 .guarantee h2 { font-size: clamp(1.15rem, 3.5vw, 1.5rem); margin: 0; color: var(--brand-strong); }
+.guarantee-note { margin: 10px 0 0; font-size: .9rem; color: var(--muted); }
 .referral { background: var(--surface); border-radius: 12px; padding: 18px; }
 .referral p { color: var(--muted); }
 @media (min-width: 760px) { .guarantee { grid-template-columns: 1.4fr 1fr; align-items: center; padding: 36px; } }

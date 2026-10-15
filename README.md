@@ -75,8 +75,10 @@ dashboard pipeline compute margins the same way.
 
 ## Deploy (GitHub Pages)
 
+Live at **https://dadosavista.com.br** since 2026-10-15 (`www` redirects to it). How it was set up:
+
 1. Settings › Pages › Source: *Deploy from a branch*, branch `main`, folder `/` (root).
-2. Once `dadosavista.com.br` is registered: add a `CNAME` file containing `dadosavista.com.br`,
+2. Add a `CNAME` file containing `dadosavista.com.br`,
    then in Cloudflare DNS create, **DNS only (grey cloud)**:
    - `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `CNAME` `www` → `lucasnardivieira.github.io`

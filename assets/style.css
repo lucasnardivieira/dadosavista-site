@@ -493,6 +493,12 @@ h3 { margin: 0 0 8px; font-size: 1.08rem; letter-spacing: -0.015em; }
 .cta .actions { margin: 0; }
 .cta h2 { font-size: clamp(1.3rem, 3.5vw, 1.8rem); }
 
+/* Section title with the standing mascot on the right, feet on the title baseline */
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.section-head .section-title { margin-bottom: 0; }
+.mascot-stand { flex: none; width: auto; height: 72px; }
+@media (min-width: 760px) { .mascot-stand { height: 96px; margin-right: 12px; } }
+
 .footer-logo { display: block; height: 24px; width: auto; margin: 8px auto 10px; }
 
 /* Simple pages (agendado, 404) */

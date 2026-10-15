@@ -23,88 +23,128 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="./"><img src="assets/logo.svg" alt="Dados à Vista" width="203" height="32"></a>
-    <a class="btn btn-ghost js-cal" href="#">Reunião grátis</a>
+  <header class="site-header is-sticky">
+    <div class="site-header-inner">
+      <a class="brand" href="./"><img src="assets/logo.svg" alt="Dados à Vista" width="203" height="32"></a>
+      <nav class="site-nav" aria-label="Seções">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#pacotes">Pacotes</a>
+        <a href="#perguntas">Perguntas</a>
+        <a href="calculadora/">Calculadora</a>
+      </nav>
+      <a class="btn btn-ghost btn-sm js-cal" href="#">Reunião grátis</a>
+    </div>
   </header>
 
   <main>
-    <section class="wrap home-hero">
-      <div class="hero">
-        <p class="eyebrow">Dashboards para pequenas empresas</p>
-        <h1>Veja como o seu negócio está, sem planilha.</h1>
-        <p class="lead">Dashboards que puxam os números direto do seu sistema (Bling, Mercado Livre,
-          a sua loja virtual) e se atualizam sozinhos todo dia. E, todo mês, um resumo e uma
-          conversa de 30 minutos sobre o que os números estão dizendo.</p>
-        <div class="actions">
-          <a class="btn js-cal" href="#">Agendar reunião grátis (30 min)</a>
-          <a class="btn btn-ghost" href="calculadora/">Calculadora de margem para lojistas</a>
+    <div class="hero-band">
+      <section class="wrap home-hero">
+        <div class="hero">
+          <p class="eyebrow">Dashboards para pequenas empresas</p>
+          <h1>Veja como o seu negócio está, <span class="hl">sem planilha.</span></h1>
+          <p class="lead">Dashboards que puxam os números direto do seu sistema (Bling, Mercado Livre,
+            a sua loja virtual) e se atualizam sozinhos todo dia. E, todo mês, um resumo e uma
+            conversa de 30 minutos sobre o que os números estão dizendo.</p>
+          <div class="actions">
+            <a class="btn btn-lg js-cal" href="#">Agendar reunião grátis (30 min)</a>
+            <a class="btn btn-ghost btn-lg" href="calculadora/">Calculadora de margem para lojistas</a>
+          </div>
+          <p class="hint">Lojas online e empresas que usam Bling · Atendimento 100% online</p>
         </div>
-        <p class="hint">Lojas online e empresas que usam Bling · Atendimento 100% online</p>
-      </div>
 
-      <!-- Placeholder visual built from the fictional store's real numbers (data-template).
-           Swap for the dashboard screenshot once Lucas records it (assets/painel-*.png). -->
-      <figure class="card mock" aria-label="Exemplo de dashboard com dados de uma loja fictícia">
-        <figcaption class="mock-head">
-          <span>Dashboard de exemplo</span>
-          <span class="tag">Loja fictícia · últimos 12 meses</span>
-        </figcaption>
-        <div class="kpis">
-          <div><p class="kpi-label">Faturamento</p><p class="kpi-value">R$ 289 mil</p></div>
-          <div><p class="kpi-label">Margem de contribuição</p><p class="kpi-value">14,4%</p></div>
-          <div><p class="kpi-label">Sobra no bolso</p><p class="kpi-value is-warn">4,9%</p></div>
-        </div>
-        <p class="mock-sub">Margem líquida por canal de venda</p>
-        <ul class="hbars">
-          <li><span class="hb-name">Loja própria</span><span class="hb-track"><span class="hb-fill" style="width: 100%"></span></span><span class="hb-val">11,8%</span></li>
-          <li><span class="hb-name">Shopee</span><span class="hb-track"><span class="hb-fill" style="width: 32%"></span></span><span class="hb-val">3,8%</span></li>
-          <li><span class="hb-name">Mercado Livre</span><span class="hb-track"><span class="hb-fill" style="width: 24%"></span></span><span class="hb-val">2,8%</span></li>
-        </ul>
-        <p class="mock-sub">Produtos que dão prejuízo</p>
-        <table class="mock-table">
-          <tbody>
-            <tr><td>Película de vidro · Shopee</td><td class="num loss">-20,9%</td></tr>
-            <tr><td>Película de vidro · Mercado Livre</td><td class="num loss">-13,1%</td></tr>
-            <tr><td>Kit organizador · Mercado Livre</td><td class="num loss">-7,5%</td></tr>
-          </tbody>
-        </table>
-      </figure>
-    </section>
+        <!-- Placeholder visual built from the fictional store's real numbers (data-template).
+             Swap for the dashboard screenshot once Lucas records it (assets/painel-*.png). -->
+        <figure class="window mock" aria-label="Exemplo de dashboard com dados de uma loja fictícia">
+          <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>painel · loja fictícia</span></div>
+          <div class="window-body">
+            <figcaption class="mock-head">
+              <span>Dashboard de exemplo</span>
+              <span class="seal">Dados fictícios · últimos 12 meses</span>
+            </figcaption>
+            <div class="kpis">
+              <div>
+                <p class="kpi-label">Faturamento</p><p class="kpi-value">R$ 289 mil</p>
+                <svg class="spark" viewBox="0 0 60 18" aria-hidden="true"><polyline points="0,15 10,13 20,14 30,10 40,9 50,7 60,2"/></svg>
+              </div>
+              <div>
+                <p class="kpi-label">Margem de contribuição</p><p class="kpi-value">14,4%</p>
+                <svg class="spark" viewBox="0 0 60 18" aria-hidden="true"><polyline points="0,9 10,8 20,11 30,7 40,9 50,8 60,6"/></svg>
+              </div>
+              <div class="focus"><i></i>
+                <p class="kpi-label">Sobra no bolso</p><p class="kpi-value is-warn">4,9%</p>
+                <svg class="spark is-loss" viewBox="0 0 60 18" aria-hidden="true"><polyline points="0,4 10,6 20,5 30,9 40,10 50,12 60,14"/></svg>
+              </div>
+            </div>
+            <p class="mock-sub">Faturamento por mês</p>
+            <svg class="line-chart" viewBox="0 0 300 84" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0b5e6e" stop-opacity=".22"/><stop offset="1" stop-color="#0b5e6e" stop-opacity="0"/></linearGradient></defs>
+              <g class="grid"><line x1="0" x2="300" y1="21" y2="21"/><line x1="0" x2="300" y1="42" y2="42"/><line x1="0" x2="300" y1="63" y2="63"/></g>
+              <path class="area" d="M0,70.7 27.3,67.6 54.5,61.4 81.8,64.5 109.1,55.2 136.4,58.3 163.6,52.1 190.9,45.9 218.2,49 245.5,42.8 272.7,36.6 300,18 V84 H0 Z"/>
+              <polyline class="line" points="0,70.7 27.3,67.6 54.5,61.4 81.8,64.5 109.1,55.2 136.4,58.3 163.6,52.1 190.9,45.9 218.2,49 245.5,42.8 272.7,36.6 300,18"/>
+            </svg>
+            <p class="mock-sub">Margem líquida por canal de venda</p>
+            <ul class="hbars">
+              <li><span class="hb-name">Loja própria</span><span class="hb-track"><span class="hb-fill" style="width: 100%"></span></span><span class="hb-val">11,8%</span></li>
+              <li><span class="hb-name">Shopee</span><span class="hb-track"><span class="hb-fill" style="width: 32%"></span></span><span class="hb-val">3,8%</span></li>
+              <li><span class="hb-name">Mercado Livre</span><span class="hb-track"><span class="hb-fill" style="width: 24%"></span></span><span class="hb-val">2,8%</span></li>
+            </ul>
+            <p class="mock-sub">Produtos que dão prejuízo</p>
+            <table class="mock-table">
+              <tbody>
+                <tr><td>Película de vidro · Shopee</td><td class="num loss">▼ −20,9%</td></tr>
+                <tr><td>Película de vidro · Mercado Livre</td><td class="num loss">▼ −13,1%</td></tr>
+                <tr><td>Kit organizador · Mercado Livre</td><td class="num loss">▼ −7,5%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </section>
+
+      <div class="wrap sources" aria-label="Fontes de dados">
+        <span class="sources-label">Conecta com</span>
+        <span class="chip">Bling</span><span class="chip">Mercado Livre</span><span class="chip">Shopee</span>
+        <span class="chip">Nuvemshop</span><span class="chip">Planilhas</span><span class="chip is-muted">e outros, avaliados na reunião</span>
+      </div>
+    </div>
 
     <section class="wrap section">
       <h2 class="section-title">Para quem é</h2>
       <div class="cards-2">
         <article class="card">
+          <span class="tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
           <h3>Lojas online</h3>
           <p>Vende no Mercado Livre, na Shopee ou na sua loja virtual? Veja o lucro real de cada
             produto e de cada canal, depois de comissão, frete e imposto, e descubra o que vende
             muito e sobra pouco.</p>
         </article>
         <article class="card">
+          <span class="tile" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3M8 17h6"/></svg></span>
           <h3>Empresas que usam Bling</h3>
           <p>Faturamento por mês, cliente e vendedor, contas a receber e a pagar, quem está
             atrasado e como fica o caixa nas próximas semanas, numa tela só e sem exportar
             relatório.</p>
         </article>
       </div>
-      <p class="hint" style="margin-top: 12px">Usa outro sistema ou só planilhas? Conte na reunião: a gente avalia sem compromisso.</p>
+      <p class="hint spaced">Usa outro sistema ou só planilhas? Conte na reunião: a gente avalia sem compromisso.</p>
     </section>
 
     <section class="wrap section">
       <h2 class="section-title">Os números existem. Só não estão à vista.</h2>
       <div class="cards-3">
         <article class="card">
+          <span class="tile is-warm" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
           <h3>O sistema mostra tudo, menos o que importa</h3>
           <p>Relatórios do ERP e do marketplace têm dezenas de colunas e nenhuma resposta direta:
             o mês foi bom? Quem está devendo? O que dá lucro?</p>
         </article>
         <article class="card">
+          <span class="tile is-warm" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></span>
           <h3>Os dados estão espalhados</h3>
           <p>Um pouco no Bling, um pouco no marketplace, um pouco na planilha do financeiro.
             Juntar tudo toma horas e sempre fica para depois.</p>
         </article>
         <article class="card">
+          <span class="tile is-warm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
           <h3>Ninguém para olhar junto com você</h3>
           <p>Mesmo com os números na mão, falta tempo para entender o que mudou e o que fazer.
             Por isso todo mês tem uma conversa sobre eles.</p>
@@ -112,7 +152,46 @@
       </div>
     </section>
 
-    <section class="wrap section">
+    <section class="band">
+      <div class="wrap section">
+        <p class="eyebrow">O que aparece nos dashboards</p>
+        <h2 class="section-title">As perguntas do dia a dia, respondidas numa tela</h2>
+        <div class="charts">
+          <figure class="card chart-card">
+            <figcaption><strong>Vendas por mês</strong><span>O mês foi bom?</span></figcaption>
+            <svg viewBox="0 0 200 80" aria-hidden="true"><g class="grid"><line x1="0" x2="200" y1="20" y2="20"/><line x1="0" x2="200" y1="45" y2="45"/><line x1="0" x2="200" y1="70" y2="70"/></g>
+              <polyline class="line is-muted" points="0,60 33,58 67,55 100,57 133,50 167,49 200,44"/>
+              <polyline class="line" points="0,56 33,52 67,47 100,49 133,38 167,33 200,20"/><circle class="dot" cx="200" cy="20" r="4"/></svg>
+            <p class="chart-note"><span class="up">▲ +18%</span> contra o mesmo mês do ano passado</p>
+          </figure>
+          <figure class="card chart-card">
+            <figcaption><strong>Margem por produto</strong><span>O que dá lucro de verdade?</span></figcaption>
+            <svg viewBox="0 0 200 80" aria-hidden="true"><line class="axis" x1="0" x2="200" y1="52" y2="52"/>
+              <rect class="bar" x="8" y="14" width="22" height="38" rx="3"/><rect class="bar" x="40" y="22" width="22" height="30" rx="3"/><rect class="bar" x="72" y="30" width="22" height="22" rx="3"/>
+              <rect class="bar" x="104" y="38" width="22" height="14" rx="3"/><rect class="bar is-loss" x="136" y="52" width="22" height="10" rx="3"/><rect class="bar is-loss" x="168" y="52" width="22" height="22" rx="3"/></svg>
+            <p class="chart-note"><span class="down">▼ 2 produtos</span> vendem com prejuízo</p>
+          </figure>
+          <figure class="card chart-card">
+            <figcaption><strong>Contas a receber</strong><span>Quem está atrasado?</span></figcaption>
+            <svg viewBox="0 0 200 80" aria-hidden="true">
+              <rect class="seg s1" x="0" y="26" width="110" height="22" rx="4"/><rect class="seg s2" x="112" y="26" width="44" height="22"/><rect class="seg s3" x="158" y="26" width="24" height="22"/><rect class="seg s4" x="184" y="26" width="16" height="22" rx="4"/>
+              <text x="0" y="66">a vencer</text><text x="200" y="66" text-anchor="end">+60 dias</text></svg>
+            <p class="chart-note"><span class="warn">! R$ 4.380</span> há mais de 60 dias</p>
+          </figure>
+          <figure class="card chart-card">
+            <figcaption><strong>Caixa das próximas semanas</strong><span>Vai faltar dinheiro?</span></figcaption>
+            <svg viewBox="0 0 200 80" aria-hidden="true"><line class="axis" x1="0" x2="200" y1="46" y2="46"/>
+              <rect class="bar" x="8" y="20" width="28" height="26" rx="3"/><rect class="bar" x="48" y="28" width="28" height="18" rx="3"/><rect class="bar is-loss" x="88" y="46" width="28" height="12" rx="3"/>
+              <rect class="bar is-muted" x="128" y="32" width="28" height="14" rx="3"/><rect class="bar is-muted" x="168" y="24" width="28" height="22" rx="3"/></svg>
+            <p class="chart-note"><span class="warn">! Semana 3</span> fecha no negativo</p>
+          </figure>
+        </div>
+        <p class="hint spaced">Exemplos com dados fictícios. Cada dashboard é montado com os indicadores que fazem sentido para o seu negócio.</p>
+      </div>
+    </section>
+
+    <section class="wrap section" id="como-funciona">
+      <p class="eyebrow">Do primeiro contato ao acompanhamento</p>
       <h2 class="section-title">Como funciona</h2>
       <ol class="steps">
         <li class="card">
@@ -143,6 +222,7 @@
     </section>
 
     <section class="wrap section" id="pacotes">
+      <p class="eyebrow">Preço fixo, sem surpresa</p>
       <h2 class="section-title">Dois pacotes, preço fixo</h2>
       <p class="section-lead">Os dois com 30 dias de garantia e de suporte. Os dados ficam numa
         conta Google no nome da sua empresa.</p>
@@ -197,6 +277,7 @@
     </section>
 
     <section class="wrap section" id="perguntas">
+      <p class="eyebrow">Antes de agendar</p>
       <h2 class="section-title">Perguntas frequentes</h2>
       <div class="faq">
         <details class="card">
@@ -268,6 +349,7 @@
 
     <section class="wrap section">
       <div class="card cta">
+        <img class="mascot-peek" src="assets/mascote-espiando.svg" alt="" width="96" height="51" loading="lazy">
         <div>
           <h2>Vamos colocar os seus números à vista?</h2>
           <p>30 minutos por vídeo, sem compromisso. Lojista? Comece pela calculadora grátis.</p>
@@ -281,7 +363,8 @@
   </main>
 
   <footer class="site-footer">
-    <p><strong>Dados à Vista</strong> · Dashboards e acompanhamento para pequenas empresas · Atendimento 100% online</p>
+    <img class="footer-logo" src="assets/logo.svg" alt="Dados à Vista" width="152" height="24" loading="lazy">
+    <p>Dashboards e acompanhamento para pequenas empresas · Atendimento 100% online</p>
     <p data-config-group hidden><span data-config="companyName" hidden></span> · CNPJ <span data-config="cnpj" hidden></span></p>
     <p>Os dashboards e a calculadora são apoio à gestão e não substituem a orientação do seu contador.</p>
     <p>© <span id="year">2026</span> Dados à Vista</p>

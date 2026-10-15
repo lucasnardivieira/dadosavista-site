@@ -18,6 +18,7 @@ site/
 │   ├── fonts/           # self-hosted Inter + Plus Jakarta Sans (woff2, latin subset, OFL)
 │   ├── logo.svg, logo-escuro.svg       # wordmark lockups (built in dadosavista-docs › marca/_tools)
 │   ├── favicon.svg, favicon-32.png, apple-touch-icon.png, icon-512.png
+│   ├── mascote-espiando.svg, mascote-404.svg  # quero-quero mascot (light backgrounds only)
 │   └── og.png           # social preview (source: tools/og-image.html)
 ├── tools/
 │   ├── og-image.html    # renders og.png with headless Firefox

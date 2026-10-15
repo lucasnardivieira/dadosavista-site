@@ -26,6 +26,14 @@
     if (group) group.hidden = false;
   });
 
+  // Sticky header: show the bottom border once the page scrolls
+  const header = document.querySelector(".site-header.is-sticky");
+  if (header) {
+    const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 })();

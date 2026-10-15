@@ -4,4 +4,9 @@ window.DAV_CONFIG = {
   tallyFormId: "",
   // Booking link for the free 30-min diagnosis (Cal.com or Calendly).
   calUrl: "https://cal.com/",
+  // Company details shown on the sales page and footer. Empty = the element stays hidden.
+  companyName: "",
+  cnpj: "",
+  email: "",
+  linkedinUrl: "",
 };

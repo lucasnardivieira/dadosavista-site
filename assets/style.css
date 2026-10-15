@@ -239,3 +239,112 @@ td.profit { color: var(--profit); font-weight: 600; }
 
 .site-footer { padding: 8px 16px 32px; text-align: center; color: var(--muted); font-size: 0.85rem; }
 .site-footer p { margin: 4px 0; }
+
+/* ---------- Sales page ---------- */
+[hidden] { display: none !important; }
+h3 { margin: 0 0 8px; font-size: 1.05rem; letter-spacing: -0.01em; }
+.center { text-align: center; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 10px; }
+
+.home-hero { display: grid; gap: 24px; padding-top: 8px; padding-bottom: 8px; }
+.home-hero .hero { padding-top: 16px; }
+@media (min-width: 900px) {
+  .home-hero { grid-template-columns: 1.1fr 1fr; align-items: center; padding-top: 24px; }
+}
+
+/* Dashboard mock (until the real screenshots exist) */
+.mock { margin: 0; padding: 18px; }
+.mock-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; font-weight: 600; margin-bottom: 14px; }
+.tag { font-size: 0.75rem; font-weight: 600; color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.kpis > div { background: var(--bg); border-radius: 10px; padding: 10px; min-width: 0; }
+.kpi-label { margin: 0; font-size: 0.72rem; color: var(--muted); line-height: 1.3; }
+.kpi-value { margin: 2px 0 0; font-size: clamp(1rem, 4vw, 1.3rem); font-weight: 700; font-variant-numeric: tabular-nums; }
+.kpi-value.is-warn { color: var(--loss); }
+.mock-sub { margin: 16px 0 8px; font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.hbars { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.hbars li { display: grid; grid-template-columns: 7.5em 1fr 3.2em; align-items: center; gap: 8px; font-size: 0.88rem; }
+.hb-track { height: 10px; background: var(--bg); border-radius: 999px; overflow: hidden; }
+.hb-fill { display: block; height: 100%; background: var(--brand); border-radius: 999px; }
+.hb-val { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.mock-table td { padding: 7px 0; font-size: 0.88rem; white-space: normal; }
+.mock-table tr:last-child td { border-bottom: 0; }
+
+/* Sections */
+.section { padding-top: 40px; }
+.section-title { font-size: clamp(1.35rem, 4vw, 1.75rem); margin-bottom: 16px; }
+.section-lead { margin: -6px 0 16px; color: var(--muted); max-width: 640px; }
+.cards-3 { display: grid; gap: 12px; }
+@media (min-width: 760px) { .cards-3 { grid-template-columns: repeat(3, 1fr); } }
+:where(.section .card) p { margin: 0; }
+:where(.section .card) p + p { margin-top: 8px; }
+.cards-3 .card p, .steps .card p { color: var(--muted); }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+@media (min-width: 760px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step-n {
+  display: inline-grid; place-items: center;
+  width: 32px; height: 32px; margin-bottom: 10px;
+  border-radius: 50%; background: var(--brand-tint); color: var(--brand-strong); font-weight: 700;
+}
+
+/* Plans */
+.plans { display: grid; gap: 16px; margin-bottom: 14px; }
+@media (min-width: 760px) { .plans { grid-template-columns: 1fr 1fr; align-items: start; } }
+.plan { display: flex; flex-direction: column; gap: 6px; padding: 24px; }
+.plan h3 { font-size: 1.35rem; margin: 0; }
+.plan-for { color: var(--muted); }
+.plan .price { margin: 10px 0 0; font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+.price .from { display: block; font-size: 0.85rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.price .unit { font-size: 0.9rem; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+.price-sub { color: var(--muted); }
+.price-sub strong { color: var(--ink); }
+.checks { list-style: none; margin: 14px 0 18px; padding: 0; display: grid; gap: 8px; }
+.checks li { position: relative; padding-left: 26px; }
+.checks li::before {
+  content: ""; position: absolute; left: 2px; top: 0.35em;
+  width: 14px; height: 8px; border-left: 2.5px solid var(--profit); border-bottom: 2.5px solid var(--profit);
+  transform: rotate(-45deg);
+}
+.plan .btn { margin-top: auto; }
+.plan-featured { border: 2px solid var(--brand); }
+.badge {
+  align-self: flex-start; margin: 0 0 4px; padding: 3px 10px; border-radius: 999px;
+  background: var(--accent); color: #3d2a05; font-size: 0.78rem; font-weight: 700;
+}
+
+/* Guarantee */
+.guarantee { display: grid; gap: 20px; background: var(--brand-tint); border-color: #c9e3d9; padding: 24px; }
+.guarantee h2 { font-size: clamp(1.15rem, 3.5vw, 1.45rem); margin: 0; color: var(--brand-strong); }
+.referral { background: var(--surface); border-radius: 10px; padding: 16px; }
+.referral p { color: var(--muted); }
+@media (min-width: 760px) { .guarantee { grid-template-columns: 1.4fr 1fr; align-items: center; } }
+
+/* FAQ */
+.faq { display: grid; gap: 10px; }
+.faq details { border-top: 1px solid var(--line); padding: 14px 18px; }
+.faq summary { font-weight: 600; }
+.faq details p { margin-top: 10px; color: var(--muted); }
+
+/* About */
+.about { display: grid; gap: 16px; padding: 24px; }
+@media (min-width: 640px) { .about { grid-template-columns: auto 1fr; align-items: start; } }
+.avatar {
+  width: 88px; height: 88px; border-radius: 50%;
+  display: grid; place-items: center; overflow: hidden;
+  background: var(--brand); color: #fff; font-size: 2rem; font-weight: 700;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.about-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.about-links:not(:has(a:not([hidden]))) { display: none; }
+
+.btn-outline-light { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgb(255 255 255 / 70%); }
+.btn-outline-light:hover { background: rgb(255 255 255 / 10%); }
+.cta .actions { margin: 0; }
+
+/* Simple pages (agendado, 404) */
+.page-simple { max-width: 640px; padding-top: 32px; padding-bottom: 40px; }
+.page-simple .card { margin-top: 20px; }
+.page-simple ol { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
+.page-simple ol li + li { margin-top: 6px; }

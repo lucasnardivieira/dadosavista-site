@@ -1,23 +1,32 @@
 # site
 
-Static site for **Dados à Vista**: the sales page (coming next) and the free
-"Calculadora de margem real" used as the lead magnet in ads. Plain HTML, CSS and JS; no build step.
+Static site for **Dados à Vista**: the sales page and the free "Calculadora de margem real" used
+as the lead magnet in ads. Plain HTML, CSS and JS; no build step.
 
 ```
 site/
+├── index.html             # sales page (2 packages, guarantee, FAQ)
+├── calculadora/index.html # margin calculator (lead magnet)
+├── agendado/index.html    # Cal.com redirect after booking
+├── 404.html               # served by GitHub Pages for missing URLs (absolute paths)
 ├── assets/
 │   ├── calc.js          # margin math (pure functions, tested)
 │   ├── calculadora.js   # calculator page wiring + Tally lead gate
-│   ├── config.js        # public settings: Tally form id, booking URL
-│   └── style.css        # brand styles shared by every page
-├── calculadora/index.html
-└── tests/test_calc.py   # runs calc.js in V8 via mini-racer
+│   ├── site.js          # sales pages: booking links + company details from config.js
+│   ├── config.js        # public settings: Tally form id, booking URL, company details
+│   ├── style.css        # brand styles shared by every page
+│   ├── favicon.svg
+│   └── og.png           # social preview (source: tools/og-image.html)
+├── tools/og-image.html  # renders og.png with headless Firefox
+└── tests/
+    ├── test_calc.py     # runs calc.js in V8 via mini-racer
+    └── test_pages.py    # every local link/asset referenced by a page exists
 ```
 
 ## Run locally
 
 ```bash
-python3 -m http.server 8000   # then open http://localhost:8000/calculadora/
+python3 -m http.server 8000   # then open http://localhost:8000/
 ```
 
 ## Test
@@ -34,7 +43,20 @@ dashboard pipeline compute margins the same way.
 - `tallyFormId`: id of the Tally lead form. While empty, "Liberar análise completa" unlocks
   without a form (useful for testing). The form receives hidden fields `origem`, `canal`, `preco`;
   create them in Tally with those exact names.
-- `calUrl`: booking link for the free 30-minute diagnosis.
+- `calUrl`: booking link for the free 30-minute diagnosis. In Cal.com, set the event's redirect
+  after booking to `https://dadosavista.com.br/agendado/`.
+- `companyName`, `cnpj`, `email`, `linkedinUrl`: shown on the sales page and footer; each element
+  stays hidden while its value is empty.
+
+## Content notes
+
+- The dashboard on the sales page is an HTML mock built from the fictional store's real numbers
+  (`data-template`, last 12 months). Replace it with the Looker Studio screenshots and video once
+  recorded. The "Quem faz" avatar is a placeholder for `assets/lucas.jpg`.
+- Prices are always "a partir de" (decided 2026-10-14); keep them in sync with
+  `docs/comercial/pacotes-e-objecoes.md` in the docs repo.
+- Still to do: `/privacidade`, the cookie banner (before the Meta pixel), passing UTMs to Tally,
+  self-hosting the Inter font.
 
 ## Notes
 

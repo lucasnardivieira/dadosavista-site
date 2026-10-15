@@ -14,10 +14,14 @@ site/
 │   ├── calculadora.js   # calculator page wiring + Tally lead gate
 │   ├── site.js          # sales pages: booking links + company details from config.js
 │   ├── config.js        # public settings: Tally form id, booking URL, company details
-│   ├── style.css        # brand styles shared by every page
-│   ├── favicon.svg
+│   ├── style.css        # brand tokens (:root) and styles shared by every page
+│   ├── fonts/           # self-hosted Inter + Plus Jakarta Sans (woff2, latin subset, OFL)
+│   ├── logo.svg, logo-escuro.svg       # wordmark lockups (built in dadosavista-docs › marca/_tools)
+│   ├── favicon.svg, favicon-32.png, apple-touch-icon.png, icon-512.png
 │   └── og.png           # social preview (source: tools/og-image.html)
-├── tools/og-image.html  # renders og.png with headless Firefox
+├── tools/
+│   ├── og-image.html    # renders og.png with headless Firefox
+│   └── subset_fonts.py  # rebuilds assets/fonts/ from the Google Fonts variable TTFs
 └── tests/
     ├── test_calc.py     # runs calc.js in V8 via mini-racer
     └── test_pages.py    # every local link/asset referenced by a page exists

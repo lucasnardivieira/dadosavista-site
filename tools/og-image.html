@@ -5,30 +5,31 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
 <style>
+  @font-face { font-family: "Inter"; src: url("../assets/fonts/inter.woff2") format("woff2"); font-weight: 400 700; }
+  @font-face { font-family: "Plus Jakarta Sans"; src: url("../assets/fonts/plus-jakarta-sans.woff2") format("woff2"); font-weight: 700 800; }
   html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
-  body { background: #0a5141; color: #fff; font-family: Inter, sans-serif; display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: 48px; padding: 0 72px; box-sizing: border-box; }
-  .brand { font-weight: 700; font-size: 30px; margin-bottom: 36px; }
-  .brand span { color: #f0a92e; }
-  h1 { font-size: 64px; line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 24px; }
-  p { font-size: 26px; color: #d5ebe3; margin: 0; line-height: 1.35; }
-  .card { background: #fff; color: #14211d; border-radius: 22px; padding: 28px; }
-  .label { font-size: 17px; color: #5a6964; font-weight: 500; margin: 0 0 14px; }
+  body { background: #08434f; color: #fff; font-family: "Inter", sans-serif; display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: 48px; padding: 0 72px; box-sizing: border-box; }
+  .brand { display: block; height: 44px; margin-bottom: 40px; }
+  h1 { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; font-size: 76px; line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 24px; }
+  h1 span { color: #f5b427; }
+  p { font-size: 26px; color: #cfe3e6; margin: 0; line-height: 1.35; }
+  .card { background: #fff; color: #0f2228; border-radius: 22px; padding: 28px; }
+  .label { font-size: 17px; color: #56676b; font-weight: 500; margin: 0 0 14px; }
   .row { display: grid; grid-template-columns: 150px 1fr 70px; gap: 12px; align-items: center; font-size: 19px; margin-top: 12px; }
-  .track { height: 14px; border-radius: 99px; background: #f0eee6; overflow: hidden; }
-  .fill { height: 100%; background: #0e6b53; border-radius: 99px; }
-  .val { text-align: right; font-weight: 700; }
+  .track { height: 14px; border-radius: 99px; background: #eceae3; overflow: hidden; }
+  .fill { height: 100%; background: #0b5e6e; border-radius: 99px; }
+  .val { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
   .loss { color: #c23d2a; }
   .alert { margin-top: 22px; padding: 12px 14px; border-radius: 12px; background: #fbe9e6; font-size: 18px; }
-  .note { font-size: 14px; color: #5a6964; margin-top: 18px; }
+  .note { font-size: 14px; color: #56676b; margin-top: 18px; }
 </style>
 </head>
 <body>
   <div>
-    <div class="brand">Dados <span>à Vista</span></div>
-    <h1>Veja como o seu negócio está, sem planilha.</h1>
-    <p>Dashboards que se atualizam sozinhos e uma conversa por mês sobre os seus números.</p>
+    <img class="brand" src="../assets/logo-escuro.svg" alt="Dados à Vista">
+    <h1>Seus números<br><span>à vista</span></h1>
+    <p>Dashboards que se atualizam sozinhos, sem planilha, e uma conversa por mês sobre os seus números.</p>
   </div>
   <div class="card">
     <p class="label">Exemplo: margem líquida por canal de venda</p>

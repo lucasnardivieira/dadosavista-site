@@ -5,7 +5,7 @@ as the lead magnet in ads. Plain HTML, CSS and JS; no build step.
 
 ```
 site/
-├── index.html             # sales page (2 packages, guarantee, FAQ)
+├── index.html             # sales page: dashboards + monthly follow-up, 2 niches, 2 packages
 ├── calculadora/index.html # margin calculator (lead magnet)
 ├── agendado/index.html    # Cal.com redirect after booking
 ├── 404.html               # served by GitHub Pages for missing URLs (absolute paths)
@@ -53,8 +53,10 @@ dashboard pipeline compute margins the same way.
 - The dashboard on the sales page is an HTML mock built from the fictional store's real numbers
   (`data-template`, last 12 months). Replace it with the Looker Studio screenshots and video once
   recorded. The "Quem faz" avatar is a placeholder for `assets/lucas.jpg`.
-- Prices are always "a partir de" (decided 2026-10-14); keep them in sync with
-  `docs/comercial/pacotes-e-objecoes.md` in the docs repo.
+- Product (decided 2026-10-15): dashboards for small businesses plus a monthly follow-up
+  (maintenance, summary email, 30-min insights call). Niches: online stores and Bling users.
+  Prices are always "a partir de"; keep them in sync with `docs/comercial/pacotes-e-objecoes.md`
+  in the docs repo. The margin calculator is the lead magnet for the e-commerce niche.
 - Still to do: `/privacidade`, the cookie banner (before the Meta pixel), passing UTMs to Tally,
   self-hosting the Inter font.
 

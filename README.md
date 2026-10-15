@@ -7,12 +7,14 @@ as the lead magnet in ads. Plain HTML, CSS and JS; no build step.
 site/
 ├── index.html             # sales page: dashboards + monthly follow-up, 2 niches, 2 packages
 ├── calculadora/index.html # margin calculator (lead magnet)
-├── agendado/index.html    # Cal.com redirect after booking
+├── agendado/index.html    # Cal.com redirect after booking (sends the Schedule event)
+├── privacidade/index.html # privacy policy (LGPD), linked from every footer and the Tally form
 ├── 404.html               # served by GitHub Pages for missing URLs (absolute paths)
 ├── assets/
 │   ├── calc.js          # margin math (pure functions, tested)
 │   ├── calculadora.js   # calculator page wiring + Tally lead gate
 │   ├── site.js          # sales pages: booking links + company details from config.js
+│   ├── tracking.js      # UTM capture, cookie banner, Meta pixel only after consent
 │   ├── config.js        # public settings: Tally form id, booking URL, company details
 │   ├── style.css        # brand tokens (:root) and styles shared by every page
 │   ├── fonts/           # self-hosted Inter + Plus Jakarta Sans (woff2, latin subset, OFL)
@@ -25,7 +27,8 @@ site/
 │   └── subset_fonts.py  # rebuilds assets/fonts/ from the Google Fonts variable TTFs
 └── tests/
     ├── test_calc.py     # runs calc.js in V8 via mini-racer
-    └── test_pages.py    # every local link/asset referenced by a page exists
+    ├── test_pages.py    # every local link/asset referenced by a page exists
+    └── test_tracking.py # UTM and consent helpers
 ```
 
 ## Run locally
@@ -50,6 +53,9 @@ dashboard pipeline compute margins the same way.
   create them in Tally with those exact names.
 - `calUrl`: booking link for the free 30-minute diagnosis. In Cal.com, set the event's redirect
   after booking to `https://dadosavista.com.br/agendado/`.
+- `metaPixelId`: Meta pixel id. While empty there is no pixel and no cookie banner (nothing to
+  consent to). Once set, the banner appears; the pixel loads only after "Aceitar" and sends
+  PageView, Lead (Tally form sent) and Schedule (`/agendado`).
 - `companyName`, `cnpj`, `email`, `linkedinUrl`: shown on the sales page and footer; each element
   stays hidden while its value is empty.
 

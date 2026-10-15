@@ -191,8 +191,12 @@
         origem: "calculadora",
         canal: channelSelect.value,
         preco: $("price").value,
+        ...(window.DavTracking ? window.DavTracking.currentUtms() : {}),
       },
-      onSubmit: unlock,
+      onSubmit: () => {
+        if (window.DavTracking) window.DavTracking.track("Lead");
+        unlock();
+      },
     });
     if (window.Tally) { open(); return; }
     const script = document.createElement("script");

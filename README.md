@@ -68,8 +68,8 @@ dashboard pipeline compute margins the same way.
   (maintenance, summary email, 30-min insights call). Niches: online stores and Bling users.
   Prices are always "a partir de"; keep them in sync with `docs/comercial/pacotes-e-objecoes.md`
   in the docs repo. The margin calculator is the lead magnet for the e-commerce niche.
-- Still to do: `/privacidade`, the cookie banner (before the Meta pixel), passing UTMs to Tally,
-  self-hosting the Inter font.
+- Privacy page, cookie banner and UTM capture: done (2026-10-15). The privacy text is a plain-
+  language draft; review it with the lawyer together with the contract.
 
 ## Notes
 

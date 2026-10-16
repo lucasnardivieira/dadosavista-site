@@ -428,7 +428,7 @@ h3 { margin: 0 0 8px; font-size: 1.08rem; letter-spacing: -0.015em; }
 
 /* Plans */
 .plans { display: grid; gap: 16px; margin-bottom: 14px; }
-@media (min-width: 760px) { .plans { grid-template-columns: 1fr 1fr; align-items: stretch; } }
+@media (min-width: 900px) { .plans { grid-template-columns: repeat(3, 1fr); align-items: stretch; } }
 .plan { display: flex; flex-direction: column; gap: 6px; padding: 28px; }
 .plan h3 { font-size: 1.4rem; margin: 0; }
 .plan-for { color: var(--muted); }

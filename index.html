@@ -53,37 +53,46 @@
           <p class="hint">Lojas online, comércio e serviços · Atendimento 100% online</p>
         </div>
 
-        <!-- Placeholder visual built from the fictional store's real numbers (data-template).
-             Swap for the dashboard screenshot once Lucas records it (assets/painel-*.png). -->
+        <!-- Illustrative dashboard built from the example store's numbers (data-template).
+             Swap for a real screenshot once Lucas records it (assets/painel-*.png). -->
         <div class="hero-visual">
         <img class="mascot-hero" src="assets/mascote-de-pe.svg" alt="" width="90" height="180">
-        <figure class="window mock" aria-label="Exemplo de dashboard com dados de uma loja fictícia">
-          <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>painel · loja fictícia</span></div>
+        <figure class="window mock" aria-label="Exemplo de dashboard">
+          <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>dadosavista.com.br/painel</span></div>
           <div class="window-body">
             <figcaption class="mock-head">
-              <span>Dashboard de exemplo</span>
-              <span class="seal">Dados fictícios · últimos 12 meses</span>
+              <span>Visão geral · últimos 12 meses</span>
+              <span class="live">Atualizado hoje, 6h</span>
             </figcaption>
             <div class="kpis">
               <div>
                 <p class="kpi-label">Faturamento</p><p class="kpi-value">R$ 289 mil</p>
-                <svg class="spark" viewBox="0 0 60 18" aria-hidden="true"><polyline points="0,15 10,13 20,14 30,10 40,9 50,7 60,2"/></svg>
+                <p class="delta up">▲ +18% <span>vs. ano anterior</span></p>
+              </div>
+              <div>
+                <p class="kpi-label">Lucro líquido</p><p class="kpi-value">R$ 14,2 mil</p>
+                <p class="delta up">▲ +9% <span>vs. ano anterior</span></p>
               </div>
               <div>
                 <p class="kpi-label">Margem de contribuição</p><p class="kpi-value">14,4%</p>
-                <svg class="spark" viewBox="0 0 60 18" aria-hidden="true"><polyline points="0,9 10,8 20,11 30,7 40,9 50,8 60,6"/></svg>
+                <p class="delta down">▼ −1,2 p.p. <span>vs. ano anterior</span></p>
               </div>
               <div class="focus"><i></i>
-                <p class="kpi-label">Sobra no bolso</p><p class="kpi-value is-warn">4,9%</p>
-                <svg class="spark is-loss" viewBox="0 0 60 18" aria-hidden="true"><polyline points="0,4 10,6 20,5 30,9 40,10 50,12 60,14"/></svg>
+                <p class="kpi-label">Vencido há +60 dias</p><p class="kpi-value is-warn">R$ 4.380</p>
+                <p class="delta warn">! 3 clientes</p>
               </div>
             </div>
-            <p class="mock-sub">Faturamento por mês</p>
+            <div class="mock-row">
+              <p class="mock-sub">Faturamento por mês</p>
+              <p class="forecast"><span class="ai-seal" title="Indicador feito com IA"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 9.4 6.6 14.5 8 9.4 9.4 8 14.5 6.6 9.4 1.5 8 6.6 6.6Z"/></svg>IA</span> Previsão de outubro: <strong>R$ 31,8 mil</strong></p>
+            </div>
             <svg class="line-chart" viewBox="0 0 300 84" preserveAspectRatio="none" aria-hidden="true">
               <defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#028a9b" stop-opacity=".22"/><stop offset="1" stop-color="#028a9b" stop-opacity="0"/></linearGradient></defs>
               <g class="grid"><line x1="0" x2="300" y1="21" y2="21"/><line x1="0" x2="300" y1="42" y2="42"/><line x1="0" x2="300" y1="63" y2="63"/></g>
-              <path class="area" d="M0,70.7 27.3,67.6 54.5,61.4 81.8,64.5 109.1,55.2 136.4,58.3 163.6,52.1 190.9,45.9 218.2,49 245.5,42.8 272.7,36.6 300,18 V84 H0 Z"/>
-              <polyline class="line" points="0,70.7 27.3,67.6 54.5,61.4 81.8,64.5 109.1,55.2 136.4,58.3 163.6,52.1 190.9,45.9 218.2,49 245.5,42.8 272.7,36.6 300,18"/>
+              <path class="area" d="M0,70.7 27.3,67.6 54.5,61.4 81.8,64.5 109.1,55.2 136.4,58.3 163.6,52.1 190.9,45.9 218.2,49 245.5,42.8 272.7,36.6 V84 H0 Z"/>
+              <path class="band-forecast" d="M272.7,36.6 300,10 300,26 Z"/>
+              <polyline class="line" points="0,70.7 27.3,67.6 54.5,61.4 81.8,64.5 109.1,55.2 136.4,58.3 163.6,52.1 190.9,45.9 218.2,49 245.5,42.8 272.7,36.6"/>
+              <polyline class="line is-forecast" points="272.7,36.6 300,18"/>
             </svg>
             <p class="mock-sub">Margem líquida por canal de venda</p>
             <ul class="hbars">
@@ -91,14 +100,12 @@
               <li><span class="hb-name">Shopee</span><span class="hb-track"><span class="hb-fill" style="width: 32%"></span></span><span class="hb-val">3,8%</span></li>
               <li><span class="hb-name">Mercado Livre</span><span class="hb-track"><span class="hb-fill" style="width: 24%"></span></span><span class="hb-val">2,8%</span></li>
             </ul>
-            <p class="mock-sub">Produtos que dão prejuízo</p>
-            <table class="mock-table">
-              <tbody>
-                <tr><td>Película de vidro · Shopee</td><td class="num loss">▼ −20,9%</td></tr>
-                <tr><td>Película de vidro · Mercado Livre</td><td class="num loss">▼ −13,1%</td></tr>
-                <tr><td>Kit organizador · Mercado Livre</td><td class="num loss">▼ −7,5%</td></tr>
-              </tbody>
-            </table>
+            <p class="mock-sub">Alertas do mês</p>
+            <ul class="alerts">
+              <li class="is-loss"><span class="al-ico" aria-hidden="true">▼</span><span>Película de vidro vende com prejuízo na Shopee</span><strong>−20,9%</strong></li>
+              <li class="is-warn"><span class="al-ico" aria-hidden="true">!</span><span>Estoque do kit organizador acaba em</span><strong>9 dias</strong></li>
+              <li class="is-good"><span class="al-ico" aria-hidden="true">▲</span><span>Ticket médio da loja própria subiu</span><strong>+6%</strong></li>
+            </ul>
           </div>
         </figure>
         </div>
@@ -121,7 +128,6 @@
           <li><span class="logo-ico" style="--ico: url(/assets/logos/mercadopago.svg)" aria-hidden="true"></span><span>Mercado Pago</span></li>
           <li class="is-more"><span class="logo-ico is-mono" aria-hidden="true">+</span><span>e outros</span></li>
         </ul>
-        <p class="hint logo-note">Marcas dos respectivos donos, citadas só para indicar compatibilidade. A Dados à Vista não tem vínculo com elas.</p>
       </div>
     </div>
 
@@ -221,7 +227,6 @@
         </div>
         <p class="ai-legend"><span class="ai-seal" title="Indicador feito com IA"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 9.4 6.6 14.5 8 9.4 9.4 8 14.5 6.6 9.4 1.5 8 6.6 6.6Z"/></svg>IA</span> <span>Indicador calculado por um modelo de inteligência artificial treinado só com os dados
           da sua empresa, exclusivo para aquele indicador, como as previsões de vendas e de caixa.</span></p>
-        <p class="hint spaced">Exemplos com dados fictícios. Cada dashboard é montado com os indicadores que fazem sentido para o seu negócio.</p>
       </div>
     </section>
 
@@ -234,30 +239,69 @@
       </div>
       <ol class="steps">
         <li class="card">
-          <span class="step-n">1</span>
-          <h3>Reunião inicial grátis</h3>
-          <p>30 minutos por vídeo. Você conta como acompanha o negócio hoje e eu mostro como
-            seriam os seus dashboards. Se não fizer sentido, eu digo.</p>
+          <div class="step-top">
+            <span class="tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 13 5.2 3.5a.5.5 0 0 0 .8-.4V7.9a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
+            <span class="step-time">30 min · grátis</span>
+          </div>
+          <h3><span class="step-n">1</span>Reunião inicial</h3>
+          <p>Por vídeo. Você conta como acompanha o negócio hoje e eu mostro como seriam os seus
+            dashboards. Se não fizer sentido, eu digo.</p>
         </li>
         <li class="card">
-          <span class="step-n">2</span>
-          <h3>Orçamento e contrato</h3>
-          <p>Em até 2 dias úteis, uma página com preço fixo, o que entra, o que não entra e o
-            prazo. Sem surpresa depois.</p>
+          <div class="step-top">
+            <span class="tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"/></svg></span>
+            <span class="step-time">até 2 dias úteis</span>
+          </div>
+          <h3><span class="step-n">2</span>Orçamento e contrato</h3>
+          <p>Uma página com preço fixo, o que entra, o que não entra e o prazo. Sem surpresa
+            depois.</p>
         </li>
         <li class="card">
-          <span class="step-n">3</span>
-          <h3>Acesso aos dados e entrega</h3>
-          <p>Uma reunião de 30 minutos para ligar os seus sistemas ao Dados à Vista. Você
-            não cria conta nem paga nuvem. Em 2 a 3 semanas, os dashboards estão no ar.</p>
+          <div class="step-top">
+            <span class="tile" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></span>
+            <span class="step-time">2 a 3 semanas</span>
+          </div>
+          <h3><span class="step-n">3</span>Dados conectados e entrega</h3>
+          <p>Uma reunião de 30 minutos para ligar os seus sistemas. Você não cria conta nem paga
+            nuvem: eu monto tudo e entrego os dashboards no ar.</p>
         </li>
-        <li class="card">
-          <span class="step-n">4</span>
-          <h3>Acompanhamento todo mês</h3>
-          <p>Eu cuido para que tudo continue certo. No dia 1 chega um resumo dos números e, no
-            Essencial e no Completo, 30 minutos de conversa sobre o que eles estão dizendo.</p>
+        <li class="card is-loop">
+          <div class="step-top">
+            <span class="tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span>
+            <span class="step-time">todo mês</span>
+          </div>
+          <h3><span class="step-n">4</span>Acompanhamento</h3>
+          <p>Eu cuido para que tudo continue certo. No dia 1 chega o resumo do mês e, no Essencial
+            e no Completo, 30 minutos de conversa sobre o que os números estão dizendo.</p>
         </li>
       </ol>
+
+      <div class="card expert">
+        <span class="tile is-warm" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36Z"/></svg></span>
+        <div>
+          <h3>Mais que um dashboard: um especialista em dados do seu lado</h3>
+          <p>No Essencial e no Completo, o resumo comentado e a call do mês trazem o olhar de quem tem
+            experiência em ciência e análise de dados. Eu explico o que mudou, por que mudou e o que
+            vale olhar a seguir, para você entender os seus números e saber para onde ir com eles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-dark" aria-labelledby="tech-titulo">
+      <div class="wrap section">
+        <p class="eyebrow">Por trás dos dashboards</p>
+        <h2 class="section-title" id="tech-titulo">As mesmas ferramentas de dados das grandes empresas</h2>
+        <p class="section-lead">Os seus dados ficam na nuvem do Google, em São Paulo, e passam por um
+          processo automático e testado antes de chegar à sua tela.</p>
+        <ul class="logo-grid is-dark">
+          <li><span class="logo-ico" style="--ico: url(/assets/logos/googlecloud.svg)" aria-hidden="true"></span><span>Google Cloud</span><small>nuvem</small></li>
+          <li><span class="logo-ico" style="--ico: url(/assets/logos/googlebigquery.svg)" aria-hidden="true"></span><span>BigQuery</span><small>banco de dados</small></li>
+          <li><span class="logo-ico" style="--ico: url(/assets/logos/looker.svg)" aria-hidden="true"></span><span>Looker Studio</span><small>dashboards</small></li>
+          <li><span class="logo-ico" style="--ico: url(/assets/logos/python.svg)" aria-hidden="true"></span><span>Python</span><small>integrações</small></li>
+          <li><span class="logo-ico is-mono" aria-hidden="true">dbt</span><span>dbt</span><small>cálculo dos indicadores</small></li>
+          <li><span class="logo-ico" style="--ico: url(/assets/logos/githubactions.svg)" aria-hidden="true"></span><span>GitHub Actions</span><small>atualização automática</small></li>
+        </ul>
+      </div>
     </section>
 
     <section class="wrap section" id="pacotes">
@@ -358,7 +402,8 @@
           <summary>O que acontece na call mensal?</summary>
           <p>Ela faz parte do Essencial e do Completo. São 30 minutos por vídeo. Eu trago três números do mês (um que melhorou, um que
             piorou e um que merece atenção), a gente entende o porquê e combina uma ou duas
-            ações. É leitura dos dados, não consultoria contábil.</p>
+            ações. É a visão de quem trabalha com análise de dados ajudando você a decidir o próximo
+            passo (não é consultoria contábil).</p>
         </details>
         <details class="card">
           <summary>Meus dados ficam seguros?</summary>
@@ -379,17 +424,6 @@
             continuam no ar, só param de atualizar. Depois eu apago tudo do meu lado.</p>
         </details>
         <details class="card">
-          <summary>E se você parar de atender?</summary>
-          <p>O contrato me obriga a avisar com 60 dias de antecedência e a entregar os seus dados e
-            a cópia dos dashboards do mesmo jeito. Você nunca fica sem os seus números.</p>
-        </details>
-        <details class="card">
-          <summary>Quanto do meu tempo isso toma?</summary>
-          <p>Na implantação, cerca de 1 hora: a reunião inicial e a reunião de acesso aos dados.
-            Depois, no Essencial e no Completo, 30 minutos por mês na call. Se o seu sistema se
-            integra por relatório, são alguns minutos uma vez por mês para enviá-lo.</p>
-        </details>
-        <details class="card">
           <summary>O que é o selo IA nos indicadores?</summary>
           <p>No Essencial e no Completo, alguns indicadores, como as previsões de vendas e de caixa, são calculados por um
             modelo de inteligência artificial treinado só com os dados da sua empresa e feito
@@ -402,24 +436,6 @@
             virtuais, sistemas de gestão e planilhas. Na reunião inicial eu confirmo como o seu
             sistema se integra, e isso fica escrito no orçamento.</p>
         </details>
-      </div>
-    </section>
-
-    <section class="wrap section">
-      <div class="card about">
-        <!-- Photo: add assets/lucas.jpg (square, ~400 px) and replace the initials below. -->
-        <div class="avatar" aria-hidden="true">L</div>
-        <div>
-          <h2>Quem faz</h2>
-          <p>Sou o Lucas, engenheiro de dados formado em Engenharia de Computação. Trabalho com
-            SQL, Python e nuvem (Google Cloud e AWS) e criei a Dados à Vista para que pequenas
-            empresas acompanhem os próprios números como as grandes fazem, com preço fixo e
-            alguém para conversar sobre eles todo mês.</p>
-          <p class="about-links">
-            <a data-config="instagramUrl" hidden>Instagram</a>
-            <a data-config="email" hidden></a>
-          </p>
-        </div>
       </div>
     </section>
 
@@ -443,6 +459,7 @@
     <p>Dashboards e acompanhamento para pequenas empresas · Atendimento 100% online</p>
     <p data-config-group hidden><span data-config="companyName" hidden></span> · CNPJ <span data-config="cnpj" hidden></span></p>
     <p>Os dashboards e a calculadora são apoio à gestão e não substituem a orientação do seu contador.</p>
+    <p class="footer-links"><a data-config="instagramUrl" hidden>Instagram</a><a data-config="email" hidden></a></p>
     <p><a href="privacidade/">Privacidade</a><span data-cookie-prefs hidden> · <a href="privacidade/#cookies">Preferências de cookies</a></span></p>
     <p>© <span id="year">2026</span> Dados à Vista</p>
   </footer>

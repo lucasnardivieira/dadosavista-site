@@ -21,7 +21,7 @@ site/
 │   ├── logo.svg, logo-escuro.svg       # wordmark lockups (built in dadosavista-docs › marca/_tools)
 │   ├── favicon.svg, favicon-32.png, apple-touch-icon.png, icon-512.png
 │   ├── mascote-de-pe.svg, mascote-espiando.svg, mascote-404.svg  # quero-quero mascot
-│   ├── logos/           # monochrome brand glyphs for the "Integra com" strip (simple-icons 16.35.0, CC0;
+│   ├── logos/           # monochrome brand glyphs for the "Integra com" and technology strips (simple-icons 16.35.0, CC0;
 │   │                    #   trademarks belong to their owners; systems without an icon use initials)
 │   └── og.png           # social preview (source: tools/og-image.html)
 ├── tools/

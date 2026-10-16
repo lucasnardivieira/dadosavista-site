@@ -528,3 +528,40 @@ h3 { margin: 0 0 8px; font-size: 1.08rem; letter-spacing: -0.015em; }
 }
 .cookie-banner p { margin: 0; }
 .cookie-actions { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
+
+/* Hero: the standing mascot watches over the dashboard window */
+.hero-visual { position: relative; margin-top: 72px; }
+.mascot-hero { position: absolute; z-index: 2; right: 18px; bottom: 100%; margin-bottom: -6px; width: auto; height: 104px; pointer-events: none; }
+@media (min-width: 960px) {
+  .hero-visual { margin-top: 0; }
+  .mascot-hero { right: auto; left: -112px; bottom: -14px; margin-bottom: 0; height: 190px; }
+}
+
+/* Integrations: brand glyphs in one muted colour (simple-icons, CC0), monograms where no icon exists */
+.integrations { padding-bottom: 32px; }
+.integrations-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 0 0 14px; }
+.logo-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 760px) { .logo-grid { grid-template-columns: repeat(6, 1fr); } }
+.logo-grid li { display: grid; justify-items: center; gap: 8px; padding: 14px 6px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; font-size: .8rem; font-weight: 600; color: var(--ink); text-align: center; }
+.logo-grid li.is-more { background: transparent; border-style: dashed; color: var(--muted); }
+.logo-ico { display: block; width: 28px; height: 28px; background: var(--muted); -webkit-mask: var(--ico) center / contain no-repeat; mask: var(--ico) center / contain no-repeat; }
+.logo-ico.is-mono { display: grid; place-items: center; background: var(--bg); color: var(--muted); border: 1.5px solid #cfd6d6; border-radius: 50%; -webkit-mask: none; mask: none; font: 800 .72rem var(--font-display); letter-spacing: -.02em; }
+.logo-note { margin-top: 10px; font-size: .72rem; }
+
+/* Pains: the owner's words, then what the dashboard shows */
+.pain h3 { font-size: 1.08rem; }
+.pain h3::before { content: "\201C"; } .pain h3::after { content: "\201D"; }
+.cards-3 .card.pain .fix { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); color: var(--brand-strong); font-weight: 600; font-size: .95rem; }
+
+/* AI seal on indicators built with a per-client model */
+.ai-seal { display: inline-flex; align-items: center; gap: 3px; vertical-align: 2px; margin-left: 4px; padding: 1px 7px 1px 5px; border-radius: 999px; background: var(--brand-strong); color: #fff; font: 700 .68rem var(--font); letter-spacing: .02em; }
+.ai-seal svg { width: 10px; height: 10px; fill: var(--accent); }
+.ai-legend { display: flex; align-items: flex-start; gap: 8px; margin: 18px 0 0; font-size: .88rem; color: var(--muted); max-width: 720px; }
+.ai-legend .ai-seal { flex: none; margin: 2px 0 0; }
+@media (max-width: 759px) {
+  .cards-3 .card.pain { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; align-items: center; padding: 18px; }
+  .pain .tile { margin: 0; }
+  .pain h3 { margin: 0; font-size: 1rem; }
+  .cards-3 .card.pain .fix { grid-column: 1 / -1; }
+}
+.chart-card figcaption .ai-seal { color: #fff; font-size: .68rem; }

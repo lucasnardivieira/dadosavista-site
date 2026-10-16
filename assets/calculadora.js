@@ -11,13 +11,15 @@
   const pct = new Intl.NumberFormat("pt-BR", { style: "percent", maximumFractionDigits: 1 });
   const num = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
+  // Stack order matters for colour: the costs that are often zero (payment, ads) come last, so
+  // no weak colour pair ends up side by side when a segment disappears (brand guide 4.3).
   const COST_LABELS = [
     ["product", "Custo do produto", "--c-product"],
     ["commission", "Comissão do canal", "--c-commission"],
     ["fixedFee", "Taxa fixa", "--c-fixed"],
-    ["payment", "Taxa de pagamento", "--c-payment"],
     ["shipping", "Frete", "--c-shipping"],
     ["tax", "Imposto", "--c-tax"],
+    ["payment", "Taxa de pagamento", "--c-payment"],
     ["ads", "Anúncio", "--c-ads"],
   ];
 

@@ -8,7 +8,7 @@ window.DAV_CONFIG = {
   companyName: "",
   cnpj: "",
   email: "contato@dadosavista.com.br",
-  linkedinUrl: "",
+  instagramUrl: "",
   // Meta pixel id (public). Empty = no pixel and no cookie banner (nothing to consent to).
   metaPixelId: "",
 };

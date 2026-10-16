@@ -57,7 +57,7 @@ dashboard pipeline compute margins the same way.
   consent to). Once set, the banner appears; the pixel loads only after "Aceitar" and sends
   PageView, Lead (Tally form sent) and Schedule (`/agendado`, which only fires if that redirect is ever enabled; the free alternative is embedding
   the Cal.com calendar and listening to its booking event).
-- `companyName`, `cnpj`, `email`, `linkedinUrl`: shown on the sales page and footer; each element
+- `companyName`, `cnpj`, `email`, `instagramUrl`: shown on the sales page and footer; each element
   stays hidden while its value is empty.
 
 ## Content notes

@@ -494,7 +494,7 @@ h3 { margin: 0 0 8px; font-size: 1.08rem; letter-spacing: -0.015em; }
 /* Plans */
 .plans { display: grid; gap: 16px; margin-bottom: 14px; }
 @media (min-width: 900px) { .plans { grid-template-columns: repeat(3, 1fr); align-items: stretch; } }
-.plan { display: flex; flex-direction: column; gap: 6px; padding: 28px; }
+.plan { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 28px; }
 .plan h3 { font-size: 1.4rem; margin: 0; }
 .plan-for { color: var(--muted); }
 .plan .price { margin: 10px 0 0; font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
@@ -510,9 +510,9 @@ h3 { margin: 0 0 8px; font-size: 1.08rem; letter-spacing: -0.015em; }
   transform: rotate(-45deg);
 }
 .plan .btn { margin-top: auto; }
-.plan-featured { border: 2px solid var(--brand); box-shadow: 0 2px 4px rgb(15 34 40 / 5%), 0 24px 48px -16px rgb(11 94 110 / 30%); }
+.plan-featured { padding: 27px; border: 2px solid var(--brand); box-shadow: 0 2px 4px rgb(15 34 40 / 5%), 0 24px 48px -16px rgb(11 94 110 / 30%); }
 .badge {
-  align-self: flex-start; margin: 0 0 4px; padding: 3px 10px; border-radius: 999px;
+  position: absolute; top: 18px; right: 18px; margin: 0; padding: 3px 10px; border-radius: 999px;
   background: var(--accent); color: var(--ink); font-size: 0.78rem; font-weight: 700;
 }
 

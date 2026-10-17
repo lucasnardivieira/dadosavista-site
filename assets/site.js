@@ -34,6 +34,25 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  // Muted loops (.js-loop): play only while on screen, never with reduced motion (the poster
+  // stays), and always with a pause button. A visitor's pause sticks until they press play again.
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("video.js-loop").forEach((video) => {
+    const toggle = video.parentElement.querySelector(".loop-toggle");
+    let paused = reduceMotion;
+    let visible = false;
+    const sync = () => {
+      if (!paused && visible) video.play().catch(() => {});
+      else video.pause();
+      if (toggle) toggle.textContent = paused ? "Ver animação" : "Pausar animação";
+    };
+    if (toggle) {
+      toggle.hidden = false;
+      toggle.addEventListener("click", () => { paused = !paused; sync(); });
+    }
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }).observe(video);
+  });
+
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 })();

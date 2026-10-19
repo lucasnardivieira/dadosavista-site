@@ -5,8 +5,8 @@ window.DAV_CONFIG = {
   // Booking link for the free 30-min initial meeting (Cal.com).
   calUrl: "https://cal.com/dados-a-vista/reuniao-inicial",
   // Company details shown on the sales page and footer. Empty = the element stays hidden.
-  companyName: "",
-  cnpj: "",
+  companyName: "61.291.541 LUCAS NARDI PORTILHO VIEIRA",
+  cnpj: "61.291.541/0001-00",
   email: "contato@dadosavista.com.br",
   instagramUrl: "https://www.instagram.com/dadosavista.br/",
   // Meta pixel id (public). Empty = no pixel and no cookie banner (nothing to consent to).

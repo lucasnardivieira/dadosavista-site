@@ -15,12 +15,12 @@
   // no weak colour pair ends up side by side when a segment disappears (brand guide 4.3).
   const COST_LABELS = [
     ["product", "Custo do produto", "--c-product"],
-    ["commission", "Comissão do canal", "--c-commission"],
+    ["commission", "Comissão", "--c-commission"],
     ["fixedFee", "Taxa fixa", "--c-fixed"],
     ["shipping", "Frete", "--c-shipping"],
     ["tax", "Imposto", "--c-tax"],
     ["payment", "Taxa de pagamento", "--c-payment"],
-    ["ads", "Anúncio", "--c-ads"],
+    ["ads", "Anúncios", "--c-ads"],
   ];
 
   // Booking links
@@ -108,7 +108,7 @@
       verdict.className = "verdict";
     } else if (r.profit < 0) {
       verdict.textContent = `Cada venda tira ${brl.format(-r.profit)} do seu bolso. ` +
-        "Quanto mais vende este produto neste canal, mais perde.";
+        "Quanto mais vende este produto nesse lugar, mais perde.";
       verdict.className = "verdict is-loss";
     } else {
       const biggest = COST_LABELS.filter(([k]) => k !== "product")
@@ -133,12 +133,12 @@
     const min = minimumPrice(input, target);
     $("min-price").innerHTML = "";
     if (min === null) {
-      $("min-price").textContent = "Com essas taxas, nenhum preço chega a essa margem neste canal.";
+      $("min-price").textContent = "Com essas taxas, nenhum preço chega a essa margem nesse lugar.";
     } else {
       const strong = document.createElement("strong");
       strong.textContent = brl.format(min);
       $("min-price").append(
-        `Preço mínimo para ter ${pct.format(target)} de margem neste canal:`, strong);
+        `Preço mínimo para ter ${pct.format(target)} de margem nesse lugar:`, strong);
     }
 
     // Same product, same costs, each channel's default fees.

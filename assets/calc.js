@@ -25,7 +25,7 @@
       fixedFeeBelow: 0,
       paymentPct: 0.0499,
     },
-    outro: { label: "Outro canal", commissionPct: 0, fixedFee: 0, fixedFeeBelow: 0, paymentPct: 0 },
+    outro: { label: "Outro lugar", commissionPct: 0, fixedFee: 0, fixedFeeBelow: 0, paymentPct: 0 },
   };
 
   // Every value is per unit sold; percentages are fractions (0.14 = 14%).

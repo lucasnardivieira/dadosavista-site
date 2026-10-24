@@ -31,8 +31,8 @@
         </div>
         <img class="mascot-stand is-lg" src="../assets/mascote-binoculo.svg" alt="" width="62" height="120">
       </div>
-      <p class="lead">Informe o preço, o custo e o canal. Em segundos você vê para onde vai cada real:
-        comissão, taxa fixa, frete, imposto e anúncio.</p>
+      <p class="lead">Informe o preço, o custo e onde você vende. Em segundos você vê para onde vai cada real:
+        comissão, taxa fixa, frete, imposto e gasto com anúncios.</p>
     </section>
 
     <div class="calc-grid">
@@ -40,7 +40,7 @@
         <fieldset>
           <legend>Onde você vende</legend>
           <div class="field full">
-            <label for="channel">Canal</label>
+            <label for="channel">Marketplace ou loja</label>
             <div class="input">
               <select id="channel" name="channel"></select>
             </div>
@@ -69,7 +69,7 @@
               <div class="input"><span class="affix">R$</span><input id="shipping" inputmode="decimal" autocomplete="off" value="11,00"></div>
             </div>
             <div class="field">
-              <label for="ads">Anúncio por venda</label>
+              <label for="ads">Gasto com anúncios por venda</label>
               <div class="input"><span class="affix">R$</span><input id="ads" inputmode="decimal" autocomplete="off" value="0,00"></div>
             </div>
             <div class="field">
@@ -77,11 +77,11 @@
               <div class="input"><input id="tax" inputmode="decimal" autocomplete="off" value="6"><span class="affix">%</span></div>
             </div>
           </div>
-          <p class="hint">Anúncio por venda = quanto você gastou em anúncios no mês ÷ unidades vendidas.</p>
+          <p class="hint">Gasto com anúncios por venda = quanto você gastou em anúncios no mês ÷ unidades vendidas.</p>
         </fieldset>
 
         <details>
-          <summary>Taxas do canal (ajuste com as da sua conta)</summary>
+          <summary>Taxas de onde você vende (ajuste com as da sua conta)</summary>
           <div class="fields">
             <div class="field">
               <label for="commission">Comissão</label>
@@ -127,7 +127,7 @@
         <div class="table-scroll">
           <table>
             <thead>
-              <tr><th>Canal</th><th class="num">Sobra por venda</th><th class="num">Margem</th></tr>
+              <tr><th>Onde vende</th><th class="num">Sobra por venda</th><th class="num">Margem</th></tr>
             </thead>
             <tbody id="compare"></tbody>
           </table>
@@ -135,7 +135,7 @@
       </div>
       <div class="gate" id="gate">
         <p><strong>Libere grátis</strong> o preço mínimo para a margem que você quer e a comparação do
-          mesmo produto em cada canal.</p>
+          mesmo produto em cada lugar onde você vende.</p>
         <button class="btn" type="button" id="unlock">Liberar análise completa</button>
       </div>
     </section>

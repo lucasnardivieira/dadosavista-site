@@ -65,7 +65,7 @@ dashboard pipeline compute margins the same way.
 ## Content notes
 
 - The dashboard on the sales page is an HTML mock built from the fictional store's real numbers
-  (`data-template`, last 12 months). Replace it with the Looker Studio screenshots and video once
+  (`data-template`, last 12 months). Replace it with the painel screenshots and video once
   recorded.
 - Product: dashboards for small businesses plus a monthly follow-up, in three plans (Básico,
   Essencial, Completo). Niches: online stores, and commerce and services on a management system or

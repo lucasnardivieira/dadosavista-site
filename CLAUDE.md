@@ -1,6 +1,6 @@
 # site — instructions for Claude
 
-Static site for Dados à Vista (https://dadosavista.com.br): sales page, margin calculator, privacy
+Static site for Dados à Vista (https://dadosavista.com.br): sales page, the "Seus números estão à vista?" quiz (lead magnet), privacy
 page. Plain HTML/CSS/JS, no build step; every push to `main` publishes via GitHub Pages in ~1 minute.
 Structure, config and deploy: [README.md](README.md).
 

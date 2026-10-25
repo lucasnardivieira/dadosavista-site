@@ -30,7 +30,7 @@ def resolve(page: Path, ref: str) -> Path | None:
 
 def test_pages_found():
     names = {p.relative_to(ROOT).as_posix() for p in PAGES}
-    assert {"index.html", "calculadora/index.html", "agendado/index.html", "404.html", "privacidade/index.html"} <= names
+    assert {"index.html", "teste/index.html", "calculadora/index.html", "agendado/index.html", "404.html", "privacidade/index.html"} <= names
 
 
 def test_local_references_exist():

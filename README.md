@@ -1,18 +1,19 @@
 # site
 
-Static site for **Dados à Vista**: the sales page and the free "Calculadora de margem real" used
-as the lead magnet in ads. Plain HTML, CSS and JS; no build step.
+Static site for **Dados à Vista**: the sales page and the free quiz "Seus números estão à vista?"
+(`/teste/`), the lead magnet in ads and on Instagram. Plain HTML, CSS and JS; no build step.
 
 ```
 site/
-├── index.html             # sales page: dashboards + monthly follow-up, 2 niches, 3 plans
-├── calculadora/index.html # margin calculator (lead magnet)
+├── index.html             # sales page: painel + monthly follow-up, any business type, 3 plans
+├── teste/index.html       # 5-question quiz, Tally lead gate, score + 3 tips (lead magnet)
+├── calculadora/index.html # redirect to /teste/ keeping UTMs (the margin calculator was retired on 2026-10-25)
 ├── agendado/index.html    # Cal.com redirect page (unused: the redirect needs a paid Cal.com plan)
 ├── privacidade/index.html # privacy policy (LGPD), linked from every footer and the Tally form
 ├── 404.html               # served by GitHub Pages for missing URLs (absolute paths)
 ├── assets/
-│   ├── calc.js          # margin math (pure functions, tested)
-│   ├── calculadora.js   # calculator page wiring + Tally lead gate
+│   ├── teste.js         # quiz questions, score, bands and tips (pure functions, tested)
+│   ├── teste-pagina.js  # quiz page wiring + Tally lead gate
 │   ├── site.js          # sales pages: booking links + company details from config.js
 │   ├── tracking.js      # UTM capture, cookie banner, Meta pixel only after consent
 │   ├── config.js        # public settings: Tally form id, booking URL, company details
@@ -28,7 +29,7 @@ site/
 │   ├── og-image.html    # renders og.png with headless Firefox
 │   └── subset_fonts.py  # rebuilds assets/fonts/ from the Google Fonts variable TTFs
 └── tests/
-    ├── test_calc.py     # runs calc.js in V8 via mini-racer
+    ├── test_teste.py    # runs teste.js in V8 via mini-racer
     ├── test_pages.py    # every local link/asset referenced by a page exists
     └── test_tracking.py # UTM and consent helpers
 ```
@@ -45,14 +46,11 @@ python3 -m http.server 8000   # then open http://localhost:8000/
 uv run --no-project --with pytest --with mini-racer pytest -q tests
 ```
 
-The test cases reuse the hand-calculated orders from `data-template`, so the calculator and the
-dashboard pipeline compute margins the same way.
-
 ## Configuration (`assets/config.js`)
 
-- `tallyFormId`: id of the Tally lead form. While empty, "Liberar análise completa" unlocks
-  without a form (useful for testing). The form receives hidden fields `origem`, `canal`, `preco`;
-  create them in Tally with those exact names.
+- `tallyFormId`: id of the Tally lead form. While empty, "Ver meu resultado" shows the result
+  without a form (useful for testing). The form receives hidden fields `origem` (`teste`), `nota`
+  (0–10), `respostas` and the UTMs; create them in Tally with those exact names.
 - `calUrl`: booking link for the free 30-minute initial meeting (`cal.com/dados-a-vista/reuniao-inicial`).
   Redirecting to `/agendado/` after booking needs a paid Cal.com plan, so the page is unused for now.
 - `metaPixelId`: Meta pixel id. While empty there is no pixel and no cookie banner (nothing to
@@ -64,22 +62,19 @@ dashboard pipeline compute margins the same way.
 
 ## Content notes
 
-- The dashboard on the sales page is an HTML mock built from the fictional store's real numbers
-  (`data-template`, last 12 months). Replace it with the painel screenshots and video once
-  recorded.
-- Product: dashboards for small businesses plus a monthly follow-up, in three plans (Básico,
-  Essencial, Completo). Niches: online stores, and commerce and services on a management system or
-  spreadsheets. Prices are always "a partir de"; keep them in sync with
-  `comercial/pacotes-e-objecoes.md` in the docs repo. The margin calculator is the lead magnet for
-  the e-commerce niche.
+- The hero and the quiz result show a real capture of the demo painel (`assets/painel-visao-geral.webp`,
+  fictional store, with the "dados de exemplo" note). The demo itself is not linked from the site.
+- Product: a painel for small businesses of any kind plus a monthly follow-up, in three plans (Básico,
+  Essencial, Completo). Prices are always "a partir de"; keep them in sync with
+  `comercial/pacotes-e-objecoes.md` in the docs repo. The quiz is the lead magnet for every
+  business type.
 - Privacy page, cookie banner and UTM capture: done (2026-10-15). The privacy text is a plain-
   language draft owned by Lucas.
 
 ## Notes
 
-- Channel fees in `calc.js` are approximate and labelled as such on the page; sellers can edit
-  them. Review them before each ad campaign.
-- The unlock state lives in `localStorage` (per browser, best effort); the page works without it.
+- Quiz answers and the unlock state live in `localStorage` (`dav_teste`, per browser, best effort);
+  the page works without it. If Tally fails to load, the result is shown anyway.
 - This repository is **public** (it is served as-is by GitHub Pages). Never commit secrets:
   `config.js` only holds public IDs (Tally form, booking link, later the Meta pixel).
 

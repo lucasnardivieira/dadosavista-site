@@ -7,7 +7,7 @@
   const UTM_STORE = "dav_utm";
   const CONSENT_STORE = "dav_consent";
 
-  // First-touch UTMs of the visit: an ad lands on the home page, the form opens on /calculadora.
+  // First-touch UTMs of the visit: an ad lands on the home page, the form opens on /teste.
   function parseUtms(search) {
     const params = new URLSearchParams(search || "");
     const utms = {};

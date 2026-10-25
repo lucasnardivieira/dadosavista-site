@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seus números estão à vista? Teste de 1 minuto | Dados à Vista</title>
+  <meta name="description" content="5 perguntas sobre como você acompanha lucro, margem, contas a receber e caixa. Receba uma nota de 0 a 10 e 3 recomendações para o seu negócio.">
+  <meta property="og:title" content="Seus números estão à vista? Teste de 1 minuto">
+  <meta property="og:description" content="5 perguntas, uma nota de 0 a 10 e 3 recomendações para o seu negócio.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://dadosavista.com.br/assets/og.png">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#f7f6f2">
+  <link rel="preload" href="../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../"><img src="../assets/logo.svg" alt="Dados à Vista" width="203" height="32"></a>
+    <a class="btn btn-ghost js-cal" href="#">Reunião grátis</a>
+  </header>
+
+  <main class="wrap quiz-page">
+    <section class="hero">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Teste grátis de 1 minuto</p>
+          <h1>Seus números estão à vista?</h1>
+        </div>
+        <img class="mascot-stand is-lg" src="../assets/mascote-binoculo.svg" alt="" width="62" height="120">
+      </div>
+      <p class="lead">5 perguntas de clicar sobre como você acompanha o seu negócio. No fim, uma nota de
+        0 a 10 e 3 recomendações para o seu caso. Vale para qualquer tipo de negócio.</p>
+    </section>
+
+    <section class="card quiz" id="quiz" aria-live="polite">
+      <div class="quiz-top">
+        <p class="quiz-progress" id="q-progress">Pergunta 1 de 5</p>
+        <button type="button" class="link-btn" id="q-back" hidden>Voltar</button>
+      </div>
+      <div class="quiz-meter" aria-hidden="true"><span id="q-meter"></span></div>
+      <h2 class="quiz-question" id="q-text"></h2>
+      <div class="quiz-options" id="q-options"></div>
+    </section>
+
+    <section class="card quiz gate-card" id="gate" hidden>
+      <img class="mascot-gate" src="../assets/mascote-acenando.svg" alt="" width="70" height="120">
+      <h2>Pronto! A sua nota já foi calculada.</h2>
+      <p>Diga para quem é o resultado e veja a nota e as 3 recomendações na hora. Leva 20 segundos.</p>
+      <div class="actions">
+        <button class="btn btn-lg" type="button" id="gate-open">Ver meu resultado</button>
+        <button type="button" class="link-btn" id="gate-back">Mudar uma resposta</button>
+      </div>
+    </section>
+
+    <section class="quiz-result" id="result" hidden>
+      <div class="card score-card">
+        <p class="result-label">Sua nota</p>
+        <p class="score"><span id="r-score">0</span><small>/10</small></p>
+        <div class="score-meter" id="r-meter-wrap" role="img" aria-label="Nota 0 de 10"><span id="r-meter"></span></div>
+        <div class="score-scale" aria-hidden="true"><span>0</span><span>10</span></div>
+        <h2 id="r-band"></h2>
+        <p id="r-text"></p>
+      </div>
+
+      <h2 class="section-title tips-title">3 recomendações para o seu caso</h2>
+      <ol class="tips" id="r-tips"></ol>
+
+      <div class="result-example">
+        <div>
+          <h2>Assim fica um negócio com os números à vista</h2>
+          <p>Um painel com os temas que fazem sentido para o seu negócio (vendas, margem, clientes, caixa
+            ou estoque), com os dados dos sistemas e planilhas que você já usa e login no computador e
+            no celular.</p>
+        </div>
+        <figure class="window shot">
+          <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>seu-negocio.painel.dadosavista.com.br</span></div>
+          <img src="../assets/painel-visao-geral.webp" width="1400" height="1167" loading="lazy"
+            alt="Painel de uma loja fictícia: resumo em frases do que os números dizem, faturamento do mês, fechamento previsto com IA, lucro líquido, ticket médio e gráficos de faturamento por mês e de como o mês vai fechar.">
+          <figcaption class="shot-note">Painel de uma loja fictícia, com dados de exemplo.</figcaption>
+        </figure>
+      </div>
+
+      <div class="card cta">
+        <div>
+          <h2>Quer ver os seus números assim?</h2>
+          <p>Numa conversa de 30 minutos por vídeo, sem compromisso, a gente olha a sua nota e mostra como
+            ficaria o painel do seu negócio.</p>
+        </div>
+        <a class="btn btn-light js-cal" href="#">Agendar reunião grátis (30 min)</a>
+      </div>
+      <p class="center"><button type="button" class="link-btn" id="r-restart">Refazer o teste</button></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>Dados à Vista</strong> · <a href="../">Dados e IA para pequenas empresas</a> · Atendimento 100% online</p>
+    <p>As recomendações são gerais e não substituem a orientação do seu contador.</p>
+    <p><a href="../privacidade/">Privacidade</a><span data-cookie-prefs hidden> · <a href="../privacidade/#cookies">Preferências de cookies</a></span></p>
+  </footer>
+
+  <script src="../assets/config.js"></script>
+  <script src="../assets/tracking.js"></script>
+  <script src="../assets/teste.js"></script>
+  <script src="../assets/teste-pagina.js"></script>
+</body>
+</html>
